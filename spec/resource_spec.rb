@@ -59,7 +59,7 @@ describe AWeber::Resource do
   
   it "should declare writable attributes" do
     resource = FakeResource.new(@aweber)
-    resource.writable_attrs.include?(:name).should be_true
+    resource.writable_attrs.include?(:name).should be_truthy
   end
   
   it "should send a JSON respresentation of the object on save" do

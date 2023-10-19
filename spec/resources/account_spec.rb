@@ -20,7 +20,7 @@ describe AWeber::Resources::Account do
 
   it "should find subscribers" do
     subscribers = account.find_subscribers(:email => 'joe@example.com')
-    subscribers.should_not be_false
+    subscribers.should_not be_falsey
     subscribers.should be_an AWeber::Collection
     subscribers.size.should == 1
     subscribers.first[1].self_link.should == 'https://api.aweber.com/1.0/accounts/1/lists/303449/subscribers/1'
