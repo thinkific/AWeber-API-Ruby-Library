@@ -4,8 +4,10 @@ describe AWeber::Resources::Link do
   include BaseObjects
   subject { aweber.account.lists[1].campaigns[50000047].links[136340] }
   
-  its(:path) { should == "/accounts/1/lists/1/campaigns/50000047/links/136340" }
-  
+  it 'should be the correct path' do
+    expect(subject.path).to eq("/accounts/1/lists/1/campaigns/50000047/links/136340")
+  end
+
   it { should respond_to :clicks_collection_link }
   it { should respond_to :http_etag }
   it { should respond_to :id }

@@ -5,8 +5,10 @@ describe AWeber::Resources::Account do
   let(:account) { aweber.account }
   subject { account }
   
-  its(:path) { should == "/accounts/1" }
-  
+  it 'should be the correct path' do
+    expect(subject.path).to eq("/accounts/1")
+  end
+
   it { should respond_to :id }
   it { should respond_to :http_etag }
   it { should respond_to :self_link }
@@ -29,7 +31,10 @@ describe AWeber::Resources::Account do
     subject { webforms }
 
     it { should be_an Array }
-    its(:size) { should == 181 }
+
+    it 'should be the correct size' do
+      expect(subject.size).to eq(181)
+    end
     
     it "should be a list of Web Forms" do
       webforms[0].should be_an AWeber::Resources::WebForm
@@ -47,7 +52,10 @@ describe AWeber::Resources::Account do
     subject { split_tests }
 
     it { should be_an Array }
-    its(:size) { should == 10 }
+
+    it 'should be the correct size' do
+      expect(subject.size).to eq(10)
+    end
     
     it "should be a list of Web Forms" do
       split_tests[0].should be_an AWeber::Resources::WebFormSplitTest

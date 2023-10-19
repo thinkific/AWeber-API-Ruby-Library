@@ -4,7 +4,9 @@ describe "AWeber::Resources::Campaign" do
   include BaseObjects
   subject { aweber.account.lists[1].campaigns[50000047] }
   
-  its(:path) { should == "/accounts/1/lists/1/campaigns/50000047" }
+  it 'should be the correct path' do
+    expect(subject.path).to eq("/accounts/1/lists/1/campaigns/50000047")
+  end
   
   it { should respond_to :campaign_type }
   it { should respond_to :click_tracking_enabled }
