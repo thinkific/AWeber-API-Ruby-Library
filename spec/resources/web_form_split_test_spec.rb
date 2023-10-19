@@ -4,7 +4,9 @@ describe AWeber::Resources::WebFormSplitTest do
   include BaseObjects
   subject { aweber.account.lists[1].web_form_split_tests[1242668124] }
   
-  its(:path) { should == "/accounts/1/lists/1/web_form_split_tests/1242668124" }
+  it 'should be the correct path' do
+    expect(subject.path).to eq("/accounts/1/lists/1/web_form_split_tests/1242668124")
+  end
   
   it { should respond_to :components_collection_link }
   it { should respond_to :http_etag }

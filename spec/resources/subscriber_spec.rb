@@ -22,16 +22,20 @@ describe AWeber::Resources::Subscriber do
   it { should respond_to :subscription_url }
   it { should respond_to :unsubscribed_at }
   it { should respond_to :verified_at }
+ 
+  it 'should be the correct path' do
+    expect(subject.path).to eq("/accounts/1/lists/1/subscribers/50723026")
+  end
 
-  its(:path)           { should == "/accounts/1/lists/1/subscribers/50723026" }
-
-  its(:writable_attrs) { should include :name }
-  its(:writable_attrs) { should include :misc_notes }
-  its(:writable_attrs) { should include :email }
-  its(:writable_attrs) { should include :status }
-  its(:writable_attrs) { should include :custom_fields }
-  its(:writable_attrs) { should include :ad_tracking }
-  its(:writable_attrs) { should include :last_followup_message_number_sent }
+  it 'should have the correct writable attributes' do
+    expect(subject.writable_attrs).to include :name
+    expect(subject.writable_attrs).to include :misc_notes
+    expect(subject.writable_attrs).to include :email
+    expect(subject.writable_attrs).to include :status
+    expect(subject.writable_attrs).to include :custom_fields
+    expect(subject.writable_attrs).to include :ad_tracking
+    expect(subject.writable_attrs).to include :last_followup_message_number_sent
+  end
 
   it "should move lists" do
     list = "http://api.aweber.com/1.0/accounts/1/lists/987654"

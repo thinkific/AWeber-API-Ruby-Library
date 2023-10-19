@@ -3,8 +3,10 @@ require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 describe AWeber::Resources::WebForm do
   include BaseObjects
   subject { aweber.account.lists[1].web_forms[1911952229] }
-  
-  its(:path) { should == "/accounts/1/lists/1/web_forms/1911952229" }
+
+  it 'should be the correct path' do 
+    expect(subject.path).to eq("/accounts/1/lists/1/web_forms/1911952229")
+  end
   
   it { should respond_to :conversion_percentage }
   it { should respond_to :http_etag }

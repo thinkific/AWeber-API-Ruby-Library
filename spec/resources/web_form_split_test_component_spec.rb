@@ -3,8 +3,10 @@ require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 describe AWeber::Resources::WebFormSplitTestComponent do
   include BaseObjects
   subject { aweber.account.lists[1].web_form_split_tests[1242668124].components["612763163-513600765"] }
-  
-  its(:path) { should == "/accounts/1/lists/1/web_form_split_tests/1242668124/components/612763163-513600765" }
+
+  it 'should be the correct path' do
+    expect(subject.path).to eq("/accounts/1/lists/1/web_form_split_tests/1242668124/components/612763163-513600765")
+  end
   
   it { should respond_to :conversion_percentage }
   it { should respond_to :http_etag }

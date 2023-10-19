@@ -25,3 +25,5 @@ Gemfile.lock
 .bundle
 examples/staging.rb
 examples/production.rb
+.tool-versions
+vendor/

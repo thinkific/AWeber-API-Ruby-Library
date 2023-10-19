@@ -4,8 +4,10 @@ describe AWeber::Resources::Integration do
   include BaseObjects
   subject { aweber.account.integrations[8076] }
   
-  its(:path) { should == "/accounts/1/integrations/8076" }
-  
+  it 'should be the correct path' do
+    expect(subject.path).to eq("/accounts/1/integrations/8076")
+  end
+
   it { should respond_to :http_etag }
   it { should respond_to :id }
   it { should respond_to :login }
