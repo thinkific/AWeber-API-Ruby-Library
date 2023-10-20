@@ -1,6 +1,6 @@
-h1. This client library has been deprecated.
+h1. This is a fork of a deprecated library which is no longer supported.
 
-h3. This library will no longer be supported and does not support OAuth2. 
+h3. This library does not support OAuth2. 
 
 h1. AWeber API Gem "!https://secure.travis-ci.org/aweber/AWeber-API-Ruby-Library.png?branch=master!":http://travis-ci.org/aweber/AWeber-API-Ruby-Library
 
